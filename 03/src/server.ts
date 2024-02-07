@@ -10,7 +10,7 @@ const readFileAsync = promisify(fs.readFile);
 const writeFileAsync = promisify(fs.writeFile);
 
 app.route('/users')
-  .get(async (req: Request, res: Response) => {
+  .get((req: Request, res: Response) => {
     readFileAsync('db.json', 'utf8')
       .then(data => {
         console.log(data);
@@ -20,7 +20,7 @@ app.route('/users')
         console.log('File operation error: ' + err)
       })
   })
-  .post(async (req: Request, res: Response) => {
+  .post((req: Request, res: Response) => {
     const newUser: User = req.body;
     readFileAsync('db.json', 'utf8')
       .then(data => {
