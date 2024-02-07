@@ -30,7 +30,7 @@ app.route('/users')
         return writeFileAsync('db.json', JSON.stringify(usersData, null, ' '));
       })
       .then(() => {
-        res.send('New user added successfully')
+        res.send('New user added successfully');
       })
       .catch(err => {
         console.log('File operation error: ' + err)
