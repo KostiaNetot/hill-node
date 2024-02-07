@@ -3,6 +3,8 @@ export type User = {
   password: string
 }
 
-export type UsersDb = {
-  users: User[]
-}
+// for hw3 task2:
+export type ImageRequest = {
+  url: string;
+  path: string;
+};
