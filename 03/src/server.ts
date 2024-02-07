@@ -45,8 +45,7 @@ app.route('/users')
 
 app.route('/image')
   .post((req: Request<{}, {}, ImageRequest>, res: Response) => {
-    const { url, path } = req.body;
-    processImage(url, path)
+    processImage(req.body)
       .then(() => {
         res.send('Image downloaded and saved successfully.');
       })
