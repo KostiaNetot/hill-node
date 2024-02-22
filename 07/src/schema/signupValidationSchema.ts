@@ -1,7 +1,7 @@
 import Joi, { ObjectSchema } from 'joi';
-import { SignUpData } from '../types/types';
+import { User } from '../types/types';
 
-const signupValidationSchema: ObjectSchema<SignUpData> = Joi.object({
+const signupValidationSchema: ObjectSchema<User> = Joi.object({
   username: Joi.string()
     .alphanum()
     .min(3)

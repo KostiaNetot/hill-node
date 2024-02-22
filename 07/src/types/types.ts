@@ -1,8 +1,8 @@
-interface SignUpData {
+interface User {
   username: string;
   password: string;
 }
 
 export {
-  SignUpData,
+  User,
 }

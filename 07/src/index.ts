@@ -2,6 +2,7 @@ import express, { Express, Request, Response , Application } from 'express';
 import dotenv from 'dotenv';
 import { signupRouter } from './routes/signupRouter';
 import { ErrorHandler } from './middleware/ErrorHandler';
+import { createDefaultDb } from './utils/createDefaultDb';
 
 //For env File 
 dotenv.config();
@@ -22,4 +23,5 @@ app.use(ErrorHandler);
 
 app.listen(port, () => {
   console.log(`Server is Fire at http://localhost:${port}`);
+  createDefaultDb('usersDb', { users: [] });
 });
